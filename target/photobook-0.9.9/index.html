@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang = "en" dir="ltr">
+    <head>
+        <title>Hello There!</title>
+        <meta charset = "utf-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name = "author" content = "Antonis Sipitanos">
+        <meta name = "description" content = "Ask2-hy359">
+        <meta name = "keywords" content="HTML5, CSS3, hy359, social, network, signup, login, new account, js, javascript">
+
+        <!-- Bootstrap plugins-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
+        </script>
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-auto-a11y="true">
+        </script>
+        <script src="https://www.openlayers.org/api/OpenLayers.js" async>
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <!-- Crypto js --> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+
+        <script src="js/face.js" ></script>
+        <script src='js/signInSession.js' ></script>
+        <script src='js/address.js' ></script>
+
+        <script src='js/ASP.js' async></script>
+
+        <script src='js/password.js' defer></script>
+
+        <script src='js/signUpSend.js' defer></script>
+        <script src='js/moveToProfile.js' defer></script>
+        <script src='js/posts.js' async></script>
+
+
+        <!-- Css styles -->
+        <link rel="stylesheet" href="styles/styles.css">
+
+
+    </head>
+
+    <body>
+        <header>
+            <!-- Get location straight away -->
+            <script>
+            getLastSession();
+            </script>
+
+            <h1> HY-359 Social platform</h1>
+            <div class="row">
+                <div class="col-4">
+                    <span id="signedNamePlace"></span><span id="signedName"></span>
+                </div>
+                <div class="col-6">
+                    <!-- Place holder div to add more stuff if needed-->
+
+
+                </div>
+                <!-- Example split danger button -->
+                <div class="btn-group col-2">
+                    <button type="button" class="btn btn-info" id="firstbtn" style="visibility: hidden">Options</button>
+                    <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="visibility: hidden" id="simplebtn">
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <p class="dropdown-item" onclick="fetchData();">Fetch my Data</p>
+                        <p class="dropdown-item" onclick="updateData();">Update my Data</p>
+                        <p class="dropdown-item" onclick="deleteUservar();">Delete account</p>
+                        <p class="dropdown-item" onclick="seeAll();">See everybody</p>
+                        <div class="dropdown-divider"></div>
+                        <p class="dropdown-item"  onclick="logOut();">Log out</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <div id="container">
+
+            <div class="row">
+                <script src="js/ASP.js" async></script>
+
+                <!-- Heading Container -->
+                <div class="col-6">
+
+                    <h1 class = "display-4" id="signin_h1"> UoC Social </h1>
+                    <h3 id="signin_h3"> A wild world of conversations, <br>videos and pictures with friends</h3>
+                </div>
+
+                <!-- Sign in Form Container -->
+                <div class="col-6">
+                    <video id='video' width='256' height='192' autoplay></video>
+                    <canvas id='canvas' width='256' height='192'></canvas>
+
+                    <!-- Sign in -->
+                    <div class="row">
+                        <div class = "col-12 modal-dialog">
+                            <div class=" main-section-signin">
+                                <div class = "modal-content col-12 signinForm">
+
+                                        <!-- Username -->
+                                        <div class = "form-group">
+                                            <label for="user_name_signin" class="signinLabel"> Username:</label>
+                                            <input type="text" class="form-control" id = "user_name_signin" name="user_name"
+                                                   placeholder="Username" title="Please enter your username" required>
+                                        </div>
+
+                                        <!-- Buttons for images -->
+                                        <div class = "form-group">
+                                            <p id ="para">Find your username with your picture!</p>
+                                            <input type='button' id="snap" value ='Take Photo'>
+                                            <input type='button' id="upload" value ='Upload Image'>
+                                        </div>
+                                        <script>
+                                           faceRec.init();
+                                        </script>
+                                        <!-- Password -->
+                                        <div class="form-group">
+                                            <label for="password_signin"> Password:<span class="required">*</span></label>
+                                            <input type="password" class="form-control" id="password_signin" name="password"
+                                                   placeholder="Password" title="Please enter your password"  required><br>
+                                        </div>
+                                        <input type="button" class="btn" id="signInBtn" value="Sign in" onclick="sign();">
+                                        <p id="signInMessage"></p>
+                                        <!-- Submit button -->
+                                        <hr>
+
+                                        <p style="text-align: center" id="accQuest">Don't have an account? </p>
+                                        <button type ="button" id ="signup" onclick="x();data='signup.html';">sign up!</button>
+                                        <hr>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                      window.onload =  navigator.geolocation.getCurrentPosition(reverseFindLocation);
+            </script>
+        </div><!-- Container div-->
+
+    </body>
+</html>

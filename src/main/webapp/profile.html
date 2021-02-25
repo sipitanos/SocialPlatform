@@ -1,0 +1,55 @@
+<div class ="col-4" id = "basicMap"></div>
+<div class="jumbotron profileJumbo" >
+    <div class="profile-container">
+        <h3> User Information</h3>
+        <h5> Get your data from the options panel!</h5>
+        <ul class="profileList">
+            <li>First Name: <span id="nameSpan">--- </span></li>
+            <li>Last Name: <span id="lnameSpan">  --- </span></li>
+            <li>Email: <span id="emailSpan">--- </span></li>
+            <li>Date of Birth: <span id="DoBSpan"> --- </span></li>
+            <li>Country: <span id="countrySpan">---</span></li>
+            <li>City: <span id="citySpan">---</span></li>
+            <li>Address: <span id="addrSpan">---</span></li>
+            <li>Occupation: <span id="occupationSpan">---</span></li>
+            <li>Interests: <span id="interestSpan">---</span></li>
+            <li>General:<span id="generalSpan">---</span></li>
+            <li>Created at:  <span id="generalSpan1">---</span></li>
+        </ul>
+
+        <div class="posts-cointainer" id ="posts-contrainer">
+            <p> Why not posting something interesting?</p>
+
+
+
+                <div class="form-group-signup">
+
+                    <textarea rows="7" cols="32" name="new_post" id="postText" maxlength="500" placeholder="Post something funny..."></textarea>
+
+                </div>
+                <br>
+                <form runat="server">
+                    <input type='file' id="imgInp" />
+                    <img id="blah" src="#" alt="your image" />
+                </form>
+                <button type="button" id ="see" onclick="imm();">Preview your image</button><br>
+
+                <button type="button" id="sendPost" onclick="makePost();"> Post it!</button>
+
+                <div class="showPosts-container" id="showPosts">
+                    <p> This must change </p>
+                </div>
+        </div>
+
+        <div class="update-container" id="update-container">
+
+
+
+            <p> You can even update your data if you check the options! </p>
+
+        </div>
+    </div>
+    <div class="db-container" id="dataBase">
+
+    </div>
+</div>

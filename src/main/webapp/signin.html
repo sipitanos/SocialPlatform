@@ -1,0 +1,59 @@
+<div class="row">
+    <script src="js/ASP.js" async></script>
+
+    <!-- Heading Container -->
+    <div class="col-6">
+
+        <h1 class = "display-4" id="signin_h1"> UoC Social </h1>
+        <h3 id="signin_h3"> A wild world of conversations, <br>videos and pictures with friends</h3>
+    </div>
+
+    <!-- Sign in Form Container -->
+    <div class="col-6">
+        <video id='video' width='256' height='192' autoplay></video>
+        <canvas id='canvas' width='256' height='192'></canvas>
+
+        <!-- Sign in -->
+        <div class="row">
+            <div class = "col-12 modal-dialog">
+                <div class=" main-section-signin">
+                    <div class = "modal-content col-12 signinForm">
+
+                        <!-- Username -->
+                        <div class = "form-group">
+                            <label for="user_name_signin" class="signinLabel"> Username:</label>
+                            <input type="text" class="form-control" id = "user_name_signin" name="user_name"
+                                   placeholder="Username" title="Please enter your username" required>
+                        </div>
+
+                        <!-- Buttons for images -->
+                        <div class = "form-group">
+                            <p id ="para">Find your username with your picture!</p>
+                            <input type='button' id="snap" value ='Take Photo'>
+                            <input type='button' id="upload" value ='Upload Image'>
+                        </div>
+                        <script>
+                            faceRec.init();
+                        </script>
+                        <!-- Password -->
+                        <div class="form-group">
+                            <label for="password_signin"> Password:<span class="required">*</span></label>
+                            <input type="password" class="form-control" id="password_signin" name="password"
+                                   placeholder="Password" title="Please enter your password"  required><br>
+                        </div>
+                        <input type="button" class="btn" id="signInBtn" value="Sign in" onclick="sign();">
+                        <p id="signInMessage"></p>
+                        <!-- Submit button -->
+                        <hr>
+
+                        <p style="text-align: center" id="accQuest">Don't have an account? </p>
+                        <button type ="button" id ="signup" onclick="x();data='signup.html'">sign up!</button>
+                        <hr>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
